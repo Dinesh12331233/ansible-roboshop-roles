@@ -1,0 +1,5 @@
+- name: configuring mongodb component 
+  hosts: mongodb 
+  become: yes 
+  roles:
+  - mongodb # roles lopala mongodb ane folder ni load cheyyamani cheptunna
