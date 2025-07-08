@@ -1,0 +1,5 @@
+CART_HOST: cart.deepthi.tech 
+USER_HOST: user.deepthi.tech 
+RABBITMQ_HOST: rabbitmq.deepthi.tech 
+RABBITMQ_USER: roboshop 
+RABBITMQ_PASSWORD: roboshop123 
