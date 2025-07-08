@@ -6,9 +6,26 @@
 - name: python-setup 
   include_role: 
     name: common 
-    tasks_from: python-setup 
+    tasks_from: python-setup  
 
-- name: systemd-setup 
-  include_role: 
-    name: common 
-    tasks_from: systemd 
+- name: copy payment.service to a remote machine 
+  ansible.builtin.copy: 
+    src: payment.service 
+    dest: /etc/systemd/system/payment.service 
+
+- name: Unmask payment service
+  ansible.builtin.systemd:
+    name: payment.service
+    masked: no
+
+- name: daemon reload service 
+  ansible.builtin.systemd_service: 
+    daemon_reload: true 
+
+- name: start and enable payment service 
+  ansible.builtin.service:
+    name: payment  
+    state: started 
+    enabled: yes     
+
+ 
