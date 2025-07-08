@@ -9,8 +9,8 @@
     tasks_from: python-setup  
 
 - name: copy payment.service to a remote machine 
-  ansible.builtin.copy: 
-    src: payment.service 
+  ansible.builtin.template: 
+    src: payment.service.j2 
     dest: /etc/systemd/system/payment.service 
 
 - name: Unmask payment service
