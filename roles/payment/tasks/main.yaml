@@ -19,8 +19,8 @@
     masked: no 
 
 - name: start and enable payment service 
-  ansible.builtin.systemd:
-    name: payment.service 
+  ansible.builtin.service:
+    name: payment
     enabled: yes   
     state: started 
          
