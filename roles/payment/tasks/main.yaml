@@ -16,16 +16,19 @@
 - name: Unmask payment service
   ansible.builtin.systemd:
     name: payment.service
-    masked: no
+    masked: no 
+
+- name: start and enable payment service 
+  ansible.builtin.systemd:
+    name: payment.service 
+    enabled: yes   
+    state: started 
+         
 
 - name: daemon reload service 
   ansible.builtin.systemd_service: 
     daemon_reload: true 
 
-- name: start and enable payment service 
-  ansible.builtin.systemd:
-    name: payment.service   
-    state: started 
-    enabled: yes     
+     
 
  
