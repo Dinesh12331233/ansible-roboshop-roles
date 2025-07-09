@@ -19,11 +19,9 @@
     dest: /app 
     remote_src: yes 
 
-- name: install dependencies # Developers emina kotha libraries ni add chesi undochu 
-  tags: 
-  - delpoyment 
+- name: install dependencies # Developers emina kotha libraries ni add chesi undochu  
   community.general.npm:
-  path: /app 
+    path: /app 
 
 - name: restart {{ component }}
   ansible.builtin.service: 
